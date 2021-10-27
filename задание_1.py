@@ -19,9 +19,9 @@ if age <= 25:
     while a:
         try:
             answer = input('Что это? \n Если сдаетесь так и напишите: "Сдаюсь"\n')
-            if (answer == "Ножницы") or (answer == "ножницы"):
+            if answer.lower() == "ножницы":
                 a = False
-            elif (answer == "Сдаюсь") or (answer == "сдаюсь"):
+            elif answer.lower() == "сдаюсь":
                 print('Ответ на загадку: Ножницы')
                 a = False
         except ValueError:
@@ -34,9 +34,9 @@ else:
     while a:
         try:
             answer = input('Что это? \n Если сдаетесь так и напишите: "Сдаюсь"\n')
-            if (answer == "Яма") or (answer == "яма"):
+            if answer.lower() == "яма":
                 a = False
-            elif (answer == "Сдаюсь") or (answer == "сдаюсь"):
+            elif answer.lower() == "сдаюсь":
                 print('Ответ на загадку: Яма')
                 a = False
         except ValueError:

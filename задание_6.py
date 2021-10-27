@@ -26,8 +26,7 @@ if a >= b:
 else:
     while a < b:
         i += 1
-        a = round(a * 1.1, 2)
-        print('{}-й день: {}'.format(i, a))
+        a = a * 1.1
+        print('{}-й день: {}'.format(i, round(a, 2)))
 
 print('Ответ: на {}-й день спортсмен достиг результата - не менее {}'.format(i, b))
-
