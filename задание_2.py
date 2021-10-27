@@ -13,5 +13,4 @@ hh = time // 3600
 mm = (time - hh * 3600) // 60
 ss = time % 60
 
-print('{hour}:{minute}:{second}'.format(hour=hh, minute=mm, second=ss))
-
+print(f'{hh:02}:{mm:02}:{ss:02}')
