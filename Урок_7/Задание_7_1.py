@@ -13,30 +13,36 @@ class Matrix:
         mat = []
         for i in range(self.r):
             for k in range(self.c):
-                mat_c.append(random.randint(0, 100))
+                mat_c.append(random.randint(-90, 100))
             mat.append(mat_c)
             mat_c = []
         self.m = mat
 
     def __str__(self):
         for i in range(self.r):
-            print(self.m[i])
+            for k in range(self.c):
+                s = str(self.m[i][k])
+                print(s.center(5), end=' ')  # 5 взято для выравнивания при небольших значениях
+            print()
 
     def __add__(self, other):
-        mat_c = []
-        mat = []
+        temporary_matrix = Matrix(self.r, self.c)
         for i in range(self.r):
             for k in range(self.c):
-                mat_c.append(self.m[i][k] + other.m[i][k])
-            mat.append(mat_c)
-            mat_c = []
-        return mat
+                temporary_matrix.m[i][k] = self.m[i][k] + other.m[i][k]
+        return temporary_matrix
 
 
-mat_1 = Matrix(3, 5)
+mat_1 = Matrix(5, 10)
+print(type(mat_1))
 mat_1.__str__()
 print()
-mat_2 = Matrix(3, 5)
+
+mat_2 = Matrix(5, 10)
+print(type(mat_2))
 mat_2.__str__()
 print()
-print(mat_1 + mat_2)
+
+mat_3 = mat_1 + mat_2
+print(type(mat_3))
+mat_3.__str__()
